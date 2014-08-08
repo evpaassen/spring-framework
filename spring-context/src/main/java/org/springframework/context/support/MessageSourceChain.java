@@ -25,6 +25,7 @@ public class MessageSourceChain implements MessageSource {
         this.messageSources = messageSources;
     }
 
+    @Override
     public String getMessage(String code, Object[] args, String defaultMessage, Locale locale) {
         checkSources();
         String message = null;
@@ -34,6 +35,7 @@ public class MessageSourceChain implements MessageSource {
         return message;
     }
 
+    @Override
     public String getMessage(String code, Object[] args, Locale locale) throws NoSuchMessageException {
         checkSources();
         String message = null;
@@ -51,6 +53,7 @@ public class MessageSourceChain implements MessageSource {
         return message;
     }
 
+    @Override
     public String getMessage(MessageSourceResolvable resolvable, Locale locale) throws NoSuchMessageException {
         checkSources();
         String message = null;
